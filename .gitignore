@@ -1,0 +1,52 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+/output/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# env files — ignore every variant, keep the checked-in template.
+# `.env*.local` alone left plain `.env` and `.env.production` committable,
+# which on a public repo is one `git add` away from leaking real secrets.
+.env
+.env.*
+!.env.example
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# agent state
+.cursor/
+# `.claude/` is local: `settings.local.json` plus junctions into `.agents/`.
+# `npx skills experimental_install` rebuilds it from skills-lock.json.
+.claude/
+# `.agents/` is NOT ignored — AGENTS.md declares it committed, and 123 files
+# under it are already tracked. The previous `.agents/` entry here silently
+# hid every newly installed skill from `git status`.
+
+# private vulnerability reports / local artifacts (never commit: public repo)
+/reports/
